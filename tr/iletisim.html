@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Hedef Dönüşüm - İletişim</title>
+  </head>
+  <body>
+    <header class="row">
+      <a href="../tr.html">
+        <img src="../img/logo.png" alt="Hedef Dönüşüm logo" />
+      </a>
+      <nav class="row">
+        <a href="../tr.html">Anasayfa</a>
+        <div class="dropdown">
+          Servisler
+          <div class="dropdown-content">
+            <a href="buyume-stratejisi.html">Büyüme Stratejisi</a>
+            <a href="kurumsal-donusum.html">Kurumsal Dönüşüm</a>
+            <a href="ticari-mukemmellik.html">Ticari Mükemmellik</a>
+          </div>
+        </div>
+        <a href="iletisim.html">İletişim</a>
+        <a href="../index.html">EN</a>
+        <a
+          href="https://tarkem.typeform.com/to/G2qUjpE7?typeform-source=soydanbayconsulting.typeform.com"
+          class="btn btn-primary"
+        >
+          Değişim Yönetimi Anketinine Katıl
+        </a>
+      </nav>
+    </header>
+    <div class="container">
+      <section class="row">
+        <div>
+          <h1 style="font-size: 3em; margin-top: 0">Bize Ulaşın</h1>
+          <h5>İlginiz için teşekkür ederiz.</h5>
+          <p>
+            Daha iyi bir gelecek mümkün. Kurumsal dönüşüm çalışmalarımız hakkında daha fazla bilgi
+            elde etmek için bizimle iletişime geçebilirsiniz.
+          </p>
+          <p>info@hedefdonusum.com</p>
+          <p>+90 (533) 818 84 96‬</p>
+          <p>HEDEF SATIŞ YÖNETİM DANIŞMANLIĞI TİC.LTD.ŞTİ.</p>
+          <p>Kültür Mahallesi Suna Sokak Konut No: 8</p>
+          <p>Beşiktaş, İstanbul, TURKEY</p>
+        </div>
+        <div>
+          <label for="fullName">İsim</label>
+          <input type="text" id="fullName" name="fullName" placeholder="İsim" />
+          <label for="subject">Konu</label>
+          <input type="text" id="subject" name="subject" placeholder="Konu" />
+          <label for="message">Mesaj</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Mesajınızı giriniz..."
+          ></textarea>
+
+          <button type="button" class="btn btn-primary" onclick="sendEmail()">Gönder</button>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <h4>HEDEF SATIŞ YÖNETİM DANIŞMANLIĞI TİC.LTD.ŞTİ.</h4>
+        <p>Kültür Mahallesi Suna Sokak Konut No: 8</p>
+        <p>Beşiktaş, İstanbul, TURKEY</p>
+      </div>
+    </footer>
+
+    <script>
+      function sendEmail() {
+        var fullName = document.getElementById('fullName').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        if (!fullName || !subject || !message) {
+          alert('Lütfen formdaki tüm alanları eksiksiz doldurun.');
+          return;
+        }
+        message += '\r\n\r\n' + fullName;
+        document.location.href =
+          'mailto:info@hedefdonusum.com?subject=Hedef Dönüşüm Website Contact Form: ' +
+          encodeURIComponent(subject) +
+          '&body=' +
+          encodeURIComponent(message);
+      }
+    </script>
+  </body>
+</html>

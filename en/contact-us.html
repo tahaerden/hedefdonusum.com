@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Hedef Dönüşüm - Contact</title>
+  </head>
+  <body>
+    <header class="row">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="Hedef Dönüşüm logo" />
+      </a>
+      <nav class="row">
+        <a href="../index.html">Home</a>
+        <div class="dropdown">
+          Services
+          <div class="dropdown-content">
+            <a href="growth-strategy.html">Growth Strategy</a>
+            <a href="business-transformation.html">Business Transformation</a>
+            <a href="commercial-excellence.html">Commercial Excellence</a>
+          </div>
+        </div>
+        <a href="contact-us.html">Contact</a>
+        <a href="../tr.html">TR</a>
+        <a
+          href="https://tarkem.typeform.com/to/G2qUjpE7?typeform-source=soydanbayconsulting.typeform.com"
+          class="btn btn-primary"
+        >
+          Take the Change Management Survey
+        </a>
+      </nav>
+    </header>
+    <div class="container">
+      <section class="row">
+        <div>
+          <h1 style="font-size: 3em; margin-top: 0">Contact Us</h1>
+          <h5>Thank you for your interest.</h5>
+          <p>
+            A better future is possible. Contact us to learn more about our work in business
+            transformation.
+          </p>
+          <p>info@hedefdonusum.com</p>
+          <p>+90 (533) 818 84 96‬</p>
+          <p>HEDEF SATIŞ YÖNETİM DANIŞMANLIĞI TİC.LTD.ŞTİ.</p>
+          <p>Kültür Mahallesi Suna Sokak Konut No: 8</p>
+          <p>Beşiktaş, İstanbul, TURKEY</p>
+        </div>
+        <div>
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Full name" />
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" />
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Type in your message..."
+          ></textarea>
+
+          <button type="button" class="btn btn-primary" onclick="sendEmail()">Send</button>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <h4>HEDEF SATIŞ YÖNETİM DANIŞMANLIĞI TİC.LTD.ŞTİ.</h4>
+        <p>Kültür Mahallesi Suna Sokak Konut No: 8</p>
+        <p>Beşiktaş, İstanbul, TURKEY</p>
+      </div>
+    </footer>
+
+    <script>
+      function sendEmail() {
+        var fullName = document.getElementById('fullName').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        if (!fullName || !subject || !message) {
+          alert('Please fill all the fields in the contact form.');
+          return;
+        }
+        message += '\r\n\r\n' + fullName;
+        document.location.href =
+          'mailto:info@hedefdonusum.com?subject=Hedef Dönüşüm Website Contact Form: ' +
+          encodeURIComponent(subject) +
+          '&body=' +
+          encodeURIComponent(message);
+      }
+    </script>
+  </body>
+</html>
